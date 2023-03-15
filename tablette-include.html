@@ -7,15 +7,77 @@
     <title>tablette include</title>
 
     <style>
-        /* pour le mobile dabord*/
-        [class*="col-"]{
-                width: 100%;
-              }  
-
 
         *{
             box-sizing: border-box;
         }
+    /* colone pour le mobile dabord*/
+        [class*="col"]{
+                width: 100%;
+                float: left;
+                padding: 15px;
+        } 
+        
+        .d-none{
+            display: none;
+        }
+
+        .row::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+            
+
+    /* superieur a 768 et inferieur a 991 */
+        @media screen and (min-width: 768px) and (max-width: 991px){
+            
+        [class*="col-"]{
+        float: left;/* pour les vieux de la vielle mode flexbox*/ 
+        }
+        .col-md-12 {
+            width: 100%;
+        }
+        .col-md-9 {
+            width: 75%;
+        }
+        .col-md-6{
+            width: 50%;
+        }
+        .col-md-3{
+            width: 25%;
+        }
+        .d-md-block {
+            display: block;
+        }
+    }
+
+    /* pour les fenetre dont la largeur est superieur a 768px toute les colones sont definies */
+        @media screen and (min-width: 992px){
+            /* pour le desktop*/
+            [class*="col-"]{
+                float: left;/* pour les vieux de la vielle mode flexbox*/
+              
+              } 
+        .col-lg-12 {
+            width: 100%;
+        }
+        .col-lg-9 {
+            width: 75%;
+        }
+        .col-lg-6{
+            width: 50%;
+        }
+        .col-lg-3{
+            width: 25%;
+        }
+        .d-lg-block {
+            display: block;
+        }
+        
+    }
+    
+         /* CUSTOM */
         html {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
@@ -53,59 +115,12 @@
             margin-bottom: 10px;
             padding: 10px;
         }
-        .row::after{
-            content: "";
-            clear: both;
-            display: block;
-        }
-       
-        [class*="col-"]{
-               
-                padding: 15px;
-              } 
-         
-/* pour les fenetre dont la largeur est superieur a 768px toute les colones sont definies */
-        @media screen and (min-width: 992px){
-            /* pour le desktop*/
-            [class*="col-"]{
-                float: left;/* pour les vieux de la vielle mode flexbox*/
-              
-              } 
-            .col-12 {
-            width: 100%;
-        }
-        .col-9 {
-            width: 75%;
-        }
-        .col-6{
-            width: 50%;
-        }
-        .col-3{
-            width: 25%;
-        }
-        }
-            /* superieur a 768 et inferieur a 991 */
-        @media screen and (min-width: 768px) and (max-width: 991px){
-            /* pour le desktop*/
-            [class*="col-"]{
-                float: left;/* pour les vieux de la vielle mode flexbox*/
-              
-          
-            }
-            .col-tab-12 {
-            width: 100%;
-        }
-        .col-tab-9 {
-            width: 75%;
-        }
-        .col-tab-6{
-            width: 50%;
-        }
-        .col-tab-3{
-            width: 25%;
-        }
         
-    }
+         .ads {
+            background-color: brown;
+            color: white;
+            padding: 15px;
+         }
     </style>
 </head>
 <body>
@@ -115,7 +130,7 @@
 
     <section class="row">
         <nav>
-            <ul class="col-3 col-tab-6">
+            <ul class="col col-lg-3 col-md-6">
                 <li>Home</li>
                 <li>About</li>
                 <li>Gallery</li>
@@ -123,12 +138,12 @@
             </ul>
         </nav>
 
-        <div class="col-6 col-tab-6">
+        <div class="col col-lg-6 col-md-6">
             <h2>Home of the responsive Web design</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nemo totam ipsa laborum quaerat ullam ut sed harum sapiente repudiandae mollitia ipsum sequi eaque laboriosam repellat animi, veritatis temporibus hic illum consequuntur ad. Nisi et voluptates architecto debitis excepturi. Obcaecati nulla sequi esse quis atque ratione dolorum, sunt libero pariatur, nihil maxime aperiam aliquid tempora neque rem magni id quidem quas possimus quod laudantium perspiciatis earum accusantium! Dolorum, blanditiis. A beatae deserunt distinctio autem eum iste hic, maiores ratione impedit, temporibus ipsum ipsam quod sequi quis possimus, cumque cum. A molestias quae possimus magnam ducimus reprehenderit, voluptatibus totam laborum, quis libero dolor eveniet voluptas dolores explicabo sapiente consequuntur? Voluptatem itaque enim mollitia voluptatum optio nemo quis quae architecto non, ut deleniti voluptatibus quos incidunt recusandae nulla placeat at est alias aspernatur eum dignissimos quibusdam et! A et laudantium nobis soluta. Voluptatum amet ea, sequi sunt hic vero est quisquam illo, explicabo reiciendis neque iure, similique nihil.</p>
         </div>
 
-        <div class="col-3 col-tab-12 right">
+        <div class=" col col-lg-3 col-md-12 right">
             <h3>Side Menu</h3>
             <ul>
                 <li>What ?</li>
@@ -140,7 +155,9 @@
 
         
     </section>
-
+    <section class="ads d-none d-md-block d-lg-block">
+        ICI LA PUB
+    </section>
     <footer>
         <h3>Footer</h3>
     </footer>
