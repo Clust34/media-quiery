@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tablette include</title>
+
+    <style>
+        /* pour le mobile dabord*/
+        [class*="col-"]{
+                width: 100%;
+              }  
+
+
+        *{
+            box-sizing: border-box;
+        }
+        html {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header, footer {
+            background-color: purple;
+            color: white;
+            padding: 15px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            background-color: chocolate;
+            color: azure;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px 0 black;
+        }
+        nav ul li:hover {
+            background-color: rgb(97, 48, 12);
+            cursor: pointer;
+        }
+        .right {
+            background-color: chocolate;
+            color: azure;
+            margin: 0;
+            padding: 0;
+        }
+        .right ul {
+            list-style-type: none;
+        }
+        .right ul li {
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .row::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+       
+        [class*="col-"]{
+               
+                padding: 15px;
+              } 
+         
+/* pour les fenetre dont la largeur est superieur a 768px toute les colones sont definies */
+        @media screen and (min-width: 992px){
+            /* pour le desktop*/
+            [class*="col-"]{
+                float: left;/* pour les vieux de la vielle mode flexbox*/
+              
+              } 
+            .col-12 {
+            width: 100%;
+        }
+        .col-9 {
+            width: 75%;
+        }
+        .col-6{
+            width: 50%;
+        }
+        .col-3{
+            width: 25%;
+        }
+        }
+            /* superieur a 768 et inferieur a 991 */
+        @media screen and (min-width: 768px) and (max-width: 991px){
+            /* pour le desktop*/
+            [class*="col-"]{
+                float: left;/* pour les vieux de la vielle mode flexbox*/
+              
+          
+            }
+            .col-tab-12 {
+            width: 100%;
+        }
+        .col-tab-9 {
+            width: 75%;
+        }
+        .col-tab-6{
+            width: 50%;
+        }
+        .col-tab-3{
+            width: 25%;
+        }
+        
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <section class="row">
+        <nav>
+            <ul class="col-3 col-tab-6">
+                <li>Home</li>
+                <li>About</li>
+                <li>Gallery</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+
+        <div class="col-6 col-tab-6">
+            <h2>Home of the responsive Web design</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nemo totam ipsa laborum quaerat ullam ut sed harum sapiente repudiandae mollitia ipsum sequi eaque laboriosam repellat animi, veritatis temporibus hic illum consequuntur ad. Nisi et voluptates architecto debitis excepturi. Obcaecati nulla sequi esse quis atque ratione dolorum, sunt libero pariatur, nihil maxime aperiam aliquid tempora neque rem magni id quidem quas possimus quod laudantium perspiciatis earum accusantium! Dolorum, blanditiis. A beatae deserunt distinctio autem eum iste hic, maiores ratione impedit, temporibus ipsum ipsam quod sequi quis possimus, cumque cum. A molestias quae possimus magnam ducimus reprehenderit, voluptatibus totam laborum, quis libero dolor eveniet voluptas dolores explicabo sapiente consequuntur? Voluptatem itaque enim mollitia voluptatum optio nemo quis quae architecto non, ut deleniti voluptatibus quos incidunt recusandae nulla placeat at est alias aspernatur eum dignissimos quibusdam et! A et laudantium nobis soluta. Voluptatum amet ea, sequi sunt hic vero est quisquam illo, explicabo reiciendis neque iure, similique nihil.</p>
+        </div>
+
+        <div class="col-3 col-tab-12 right">
+            <h3>Side Menu</h3>
+            <ul>
+                <li>What ?</li>
+                <li>Where ?</li>
+                <li>Who ?</li>
+                <li>How ?</li>
+            </ul>
+        </div>
+
+        
+    </section>
+
+    <footer>
+        <h3>Footer</h3>
+    </footer>
+
+    
+</body>
+</html>
